@@ -15,7 +15,7 @@ class ResellerClubAPI {
 	public function __construct()
     {
 		if(isset($_POST['domain'])){
-		$this->domainname = preg_replace('/[\s-]+/', '-', substr(trim($_POST['domain']), 0, 253) );
+		$this->domainname = strtolower(preg_replace('/[\s-]+/', '-', substr(trim($_POST['domain']), 0, 253) ) );
 		}
 	}
 	
